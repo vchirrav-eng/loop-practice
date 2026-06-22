@@ -12,6 +12,27 @@ maker/checker split between two subagents.
 
 ---
 
+## The shift, at a glance
+
+The one thing that changes is **where the human sits**. In the old model you're
+inside every turn, so your attention is the throughput cap. With loop engineering
+you move to the edges — design the loop once, review the final PR — and a separate
+verifier (not the maker) decides when it's "done."
+
+**Without loop engineering — you prompt the agent recursively:**
+
+![Without loop engineering: recursive human prompting](./docs/without-loop-engineering.svg)
+
+**With loop engineering — the closed loop runs itself:**
+
+![With loop engineering: the closed loop runs itself](./docs/with-loop-engineering.svg)
+
+The trade is concrete: you swap turn-by-turn attention for token cost and
+front-loaded setup, which pays off when "done" must be trustworthy and the task
+recurs — exactly the dependency-bump case this repo implements.
+
+---
+
 ## The use case we implemented
 
 **Goal:** keep dependencies current without a human babysitting each bump.

@@ -1,0 +1,61 @@
+<svg width="100%" viewBox="0 0 680 438" role="img" xmlns="http://www.w3.org/2000/svg"><title>With loop engineering: the closed loop runs itself</title><desc>A /goal trigger calls the dep-update skill to find outdated packages, opens an isolated worktree, the dep-bumper maker bumps one package, the dep-verifier checker independently confirms PASS or FAIL, results are logged to loop-state.md which feeds the next run, and a passing change opens a PR. The human only designs the loop once and reviews the PR. Benefits include running while away and proven done; problems include token cost per turn and unattended errors still shipping.</desc>
+<defs>
+<style>
+.t{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:14px;fill:#1a1a1a}
+.ts{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:12px;fill:#6b6b6b}
+.th{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:14px;font-weight:500;fill:#1a1a1a}
+.box{fill:#f5f5f3;stroke:#d8d8d2;stroke-width:1}
+.arr{stroke:#6b6b6b;stroke-width:1.5;fill:none}
+.c-green{fill:#3a9d6e;stroke:#3a9d6e}
+.c-red{fill:#cf5a4e;stroke:#cf5a4e}
+.c-green-fill{fill:#e3f1ea;stroke:#3a9d6e;stroke-width:1}
+</style>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<text class="th" x="40" y="30">With loop engineering: the closed loop runs itself</text>
+<rect class="box" x="40" y="52" width="132" height="54" rx="4"/>
+<text class="th" x="106" y="78" text-anchor="middle">/goal</text>
+<text class="ts" x="106" y="95" text-anchor="middle">heartbeat · trigger</text>
+<rect class="box" x="194" y="52" width="132" height="54" rx="4"/>
+<text class="th" x="260" y="78" text-anchor="middle">dep-update skill</text>
+<text class="ts" x="260" y="95" text-anchor="middle">npm outdated</text>
+<rect class="box" x="348" y="52" width="132" height="54" rx="4"/>
+<text class="th" x="414" y="78" text-anchor="middle">worktree</text>
+<text class="ts" x="414" y="95" text-anchor="middle">isolated branch</text>
+<rect class="box" x="502" y="52" width="132" height="54" rx="4"/>
+<text class="th" x="568" y="78" text-anchor="middle">dep-bumper</text>
+<text class="ts" x="568" y="95" text-anchor="middle">maker · one bump</text>
+<line class="arr" x1="172" y1="79" x2="192" y2="79" marker-end="url(#arrow)"/>
+<line class="arr" x1="326" y1="79" x2="346" y2="79" marker-end="url(#arrow)"/>
+<line class="arr" x1="480" y1="79" x2="500" y2="79" marker-end="url(#arrow)"/>
+<line class="arr" x1="568" y1="106" x2="568" y2="138" marker-end="url(#arrow)"/>
+<rect class="box" x="502" y="140" width="132" height="54" rx="4"/>
+<text class="th" x="568" y="166" text-anchor="middle">dep-verifier</text>
+<text class="ts" x="568" y="183" text-anchor="middle">checker · PASS/FAIL</text>
+<rect class="box" x="348" y="140" width="132" height="54" rx="4"/>
+<text class="th" x="414" y="166" text-anchor="middle">loop-state.md</text>
+<text class="ts" x="414" y="183" text-anchor="middle">memory · log</text>
+<rect class="box" x="194" y="140" width="132" height="54" rx="4"/>
+<text class="th" x="260" y="166" text-anchor="middle">open PR</text>
+<text class="ts" x="260" y="183" text-anchor="middle">lodash 4.18.1</text>
+<line class="arr" x1="502" y1="167" x2="482" y2="167" marker-end="url(#arrow)"/>
+<line class="arr" x1="348" y1="167" x2="328" y2="167" marker-end="url(#arrow)"/>
+<polyline class="arr" points="414,140 414,124 106,124 106,108" fill="none" marker-end="url(#arrow)" style="stroke-dasharray:4 3"/>
+<text class="ts" x="260" y="120" text-anchor="middle">state feeds next run</text>
+<line class="arr" x1="260" y1="194" x2="260" y2="222" marker-end="url(#arrow)"/>
+<rect class="c-green-fill" x="40" y="224" width="600" height="46" rx="4"/>
+<text class="th" x="340" y="252" text-anchor="middle">you: design the loop once, then review the PR</text>
+<rect class="box" x="40" y="288" width="290" height="142" rx="4"/>
+<rect class="c-green" x="58" y="304" width="12" height="12" rx="2"/>
+<text class="th" x="80" y="314">benefits</text>
+<text class="ts" x="58" y="342">· runs while you're away</text>
+<text class="ts" x="58" y="366">· "done" is proven, not claimed</text>
+<text class="ts" x="58" y="390">· state compounds across runs</text>
+<text class="ts" x="58" y="414">· isolated, consistent bumps</text>
+<rect class="box" x="360" y="288" width="290" height="142" rx="4"/>
+<rect class="c-red" x="378" y="304" width="12" height="12" rx="2"/>
+<text class="th" x="400" y="314">problems</text>
+<text class="ts" x="378" y="342">· verifier each turn = tokens</text>
+<text class="ts" x="378" y="366">· unattended errors still ship</text>
+<text class="ts" x="378" y="390">· front-loaded setup cost</text>
+<text class="ts" x="378" y="414">· can silently skip backlog</text>
+</svg>
